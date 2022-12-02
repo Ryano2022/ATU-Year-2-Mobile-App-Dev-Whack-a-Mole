@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Whack_A_Mole.MainPage">
+
+    <Grid x:Name="GridPageContent">
+        <!-- One row, one column. -->
+        <Image Source="background.png" Aspect="AspectFill" />
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Score: " Margin="3" TextColor="Black"
+                           FontSize="Medium" FontAttributes="Italic"/>
+
+                    <Label x:Name="LblScore" Text="0" Margin="3"
+                           TextColor="Black"
+                           FontSize="Medium" FontAttributes="Bold"/>
+
+                    <Label Text="Points" Margin="3"
+                           TextColor="Black"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Time: " Margin="3" TextColor="Black"
+                           FontSize="Medium" FontAttributes="Italic"/>
+
+                    <Label x:Name="LblCountdown" Text="30" Margin="3"
+                           TextColor="Black"
+                           FontSize="Medium" FontAttributes="Bold"/>
+
+                    <Label Text="Seconds" Margin="3"
+                           TextColor="Black"
+                           FontSize="Medium"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Grid x:Name="GridGame4" IsVisible="true"
+                  HorizontalOptions="Center" VerticalOptions="Center"
+                  HeightRequest="300" WidthRequest="300">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton x:Name="ImgBtnMole4"
+                                 Source="mole.png" BackgroundColor="Transparent"
+                                 HorizontalOptions="Center" VerticalOptions="Center"
+                                 HeightRequest="60" WidthRequest="60"
+                                 Grid.Row="1" Grid.Column="1"
+                                 Clicked="ImgBtnMole_Clicked"/>
+            </Grid>
+
+            <Grid x:Name="GridGame5" IsVisible="false"
+                      HorizontalOptions="Center" VerticalOptions="Center"
+                      HeightRequest="300" WidthRequest="300">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton x:Name="ImgBtnMole5"
+                                 Source="mole.png" BackgroundColor="Transparent"
+                                 HorizontalOptions="Center" VerticalOptions="Center"
+                                 HeightRequest="36" WidthRequest="36"
+                                 Grid.Row="1" Grid.Column="2"
+                                 Clicked="ImgBtnMole_Clicked"/>
+
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="BtnSwitch" Text="Switch Grid"
+                        Margin="5" HorizontalOptions="Center" VerticalOptions="Center"
+                        Clicked="BtnSwitch_Clicked" BackgroundColor="SlateGray" TextColor="Black" />
+
+                <Button x:Name="BtnMoveTest" Text="Start Game"
+                        Margin="5" HorizontalOptions="Center" VerticalOptions="Center"
+                        Clicked="BtnMoveTest_Clicked" BackgroundColor="SlateGray" TextColor="Black" />
+
+                <Button x:Name="BtnReset" Text="Restart Game" 
+                        Margin="5" HorizontalOptions="Center" VerticalOptions="Center"
+                        Clicked="BtnReset_Clicked" BackgroundColor="SlateGray" TextColor="Black" />
+                
+                <!-- Can't figure out how to change the hover colour on these buttons unfortunately. -->
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
+    
